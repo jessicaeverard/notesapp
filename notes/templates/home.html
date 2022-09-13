@@ -28,12 +28,17 @@
             </form>
         </p>
 
+        
         <ul class="list-group">
             {% for note in notes %}  
+            <div class="card" style="width: 300px; display: flex; ">
               <li class="list-group-item pb-3 pt-3">
-                <p class="card-text">{{ note.text }}</p>
+                <b><p class="card-text">{{ note.text }}</p></b>
+                <p class="card-text">{{ note.date }}</p>
+              </div>
             {% endfor %}
         </ul>
+        
 
         </center>
 

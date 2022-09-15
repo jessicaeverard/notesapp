@@ -28,17 +28,20 @@
             </form>
         </p>
 
+        <div style="display: flex; justify-content:space-evenly; flex-wrap: wrap;">
         
-        <ul class="list-group">
-            {% for note in notes %}  
-            <div class="card" style="width: 300px; display: flex; ">
-              <li class="list-group-item pb-3 pt-3">
-                <b><p class="card-text">{{ note.text }}</p></b>
-                <p class="card-text">{{ note.date }}</p>
+              {% for note in notes %}  
+              <div class="card" style="width: 300px;">
+                  <b><p class="card-text">{{ note.text }}</p></b>
+                  <p class="card-text">{{ note.date }}</p>
+                  <div style="width: 100px;">
+                  <a class="btn btn-light">Edit</a>
+                  <a class="btn btn-danger" href="{% url 'deletenote' note.id %}">Delete</a>
+                  </div>
               </div>
-            {% endfor %}
-        </ul>
-        
+              {% endfor %}
+          
+        </div>
 
         </center>
 

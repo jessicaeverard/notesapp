@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from .forms import NoteForm
 from .models import Notes
@@ -10,11 +10,16 @@ def index(request):
         newNote = form.save(commit=False) #creating the object but not committing yet - may not be needed
         #newNote.text = request.text, not too sure why this is not needed maybe cuz its a post request?
         newNote.save() #creating the note object
-        notes = Notes.objects.all()
+        notes = Notes.objects.all().order_by('-date')
         return render(request, "home.html", {'form':NoteForm, 'notes':notes})
 
     else:
-        notes = Notes.objects.all()
+        notes = Notes.objects.all().order_by('-date')
+    return render(request, "home.html", {'form':NoteForm, 'notes':notes})
+
+def deletenote(request, notes_id):
+    notes = get_object_or_404(Notes, pk=notes_id)
+    notes.delete()
     return render(request, "home.html", {'form':NoteForm, 'notes':notes})
 
 

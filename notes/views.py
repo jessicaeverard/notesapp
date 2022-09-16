@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.http import HttpResponse
+from django.urls import reverse
+from django.http import HttpResponse, HttpResponseRedirect
 from .forms import NoteForm
 from .models import Notes
 
@@ -17,10 +18,11 @@ def index(request):
         notes = Notes.objects.all().order_by('-date')
     return render(request, "home.html", {'form':NoteForm, 'notes':notes})
 
-def deletenote(request, notes_id):
-    notes = get_object_or_404(Notes, pk=notes_id)
-    notes.delete()
-    return render(request, "home.html", {'form':NoteForm, 'notes':notes})
+def delete(request, id):
+     note = Notes.objects.get(id=id)
+     note.delete()
+     return HttpResponseRedirect(reverse('index'))
+
 
 
 

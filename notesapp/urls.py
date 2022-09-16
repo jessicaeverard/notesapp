@@ -19,7 +19,14 @@ from notes import views as notesViews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', notesViews.index),
-    path('', notesViews.deletenote,
-         name='deletenote'),
+    path('', notesViews.index, name='index'),
+    path('delete/<int:id>', notesViews.delete, name='delete'),
 ]
+
+#the href in the template points to the 3rd url here
+
+#reason why the integer needs to be there is because each note object has a unique id so it needs to know which one to delete
+
+#we pass through the integer from the template to this url which does the delete view
+
+#in this view you grab the specific object from the notes model and delete it 

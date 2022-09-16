@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html> 
     <head lang="en">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,6 +10,14 @@
     </head>
 
     <body>
+        <style>
+
+        .buttons{
+            width: 100px;
+        }
+
+
+        </style>
         <nav class="navbar navbar-dark bg-dark">
             <div class="container-fluid">
                 <span class="navbar-brand mb-0 h1">Notes</span>
@@ -34,9 +42,9 @@
               <div class="card" style="width: 300px;">
                   <b><p class="card-text">{{ note.text }}</p></b>
                   <p class="card-text">{{ note.date }}</p>
-                  <div style="width: 100px;">
+                  <div>
                   <a class="btn btn-light">Edit</a>
-                  <a class="btn btn-danger" href="{% url 'deletenote' note.id %}">Delete</a>
+                  <a class="btn btn-danger"href="delete/{{ note.id }}">Delete</a> 
                   </div>
               </div>
               {% endfor %}

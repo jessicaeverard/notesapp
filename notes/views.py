@@ -21,8 +21,18 @@ def index(request):
 def delete(request, id):
      note = Notes.objects.get(id=id)
      note.delete()
-     return HttpResponseRedirect(reverse('index'))
+     return HttpResponseRedirect(reverse('index')) #redirect to the index function which is defined above
 
+def edit(request, id):
+     chosen_note = Notes.objects.get(id=id)
+     if request.method == 'GET':
+        form = NoteForm(instance=chosen_note)
+        return render(request, 'editnote.html', 
+                      {'review': chosen_note,'form':form})
+     else:
+        form = NoteForm(request.POST, instance=chosen_note)
+        form.save()
+        return HttpResponseRedirect(reverse('index'))
 
 
 

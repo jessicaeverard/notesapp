@@ -21,6 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', notesViews.index, name='index'),
     path('delete/<int:id>', notesViews.delete, name='delete'),
+    path('edit/<int:id>', notesViews.edit, name='edit'),
 ]
 
 #the href in the template points to the 3rd url here

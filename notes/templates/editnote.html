@@ -10,46 +10,23 @@
     </head>
 
     <body>
-        <style>
-
-        .buttons{
-            width: 100px;
-        }
-
-
-        </style>
         <nav class="navbar navbar-dark bg-dark">
             <div class="container-fluid">
                 <span class="navbar-brand mb-0 h1">Notes</span>
             </div>            
         </nav>
 
-        <center><h1 style="padding-top: 20px;">Add a new note: </h1>
+        <center><h1 style="padding-top: 20px;">Edit note: </h1>
 
         <p class="card-text">
             <form method="POST" style="width:500px;">
               {% csrf_token %}
               {{ form.as_p }}
               <button type="submit" class="btn btn-primary">
-                Add Note
+                Update Note
               </button>
             </form>
         </p>
-
-        <div style="display: flex; justify-content:space-evenly; flex-wrap: wrap;">
-        
-              {% for note in notes %}  
-              <div class="card" style="width: 300px; padding:20px; margin:20px;">
-                  <b><p class="card-text">{{ note.text }}</p></b>
-                  <p class="card-text">{{ note.date }}</p>
-                  <div>
-                  <a class="btn btn-light"href="edit/{{ note.id }}">Edit</a>
-                  <a class="btn btn-danger"href="delete/{{ note.id }}">Delete</a> 
-                  </div>
-              </div>
-              {% endfor %}
-          
-        </div>
 
         </center>
 

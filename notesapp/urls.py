@@ -22,6 +22,7 @@ urlpatterns = [
     path('', notesViews.index, name='index'),
     path('delete/<int:id>', notesViews.delete, name='delete'),
     path('edit/<int:id>', notesViews.edit, name='edit'),
+    path('accounts/', include('accounts.urls')),
 ]
 
 #the href in the template points to the 3rd url here

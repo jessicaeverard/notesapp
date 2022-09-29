@@ -16,13 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from notes import views as notesViews
+from accounts import views as accountViews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', notesViews.index, name='index'),
+    path('', accountViews.loginaccount, name='loginaccount'),
     path('delete/<int:id>', notesViews.delete, name='delete'),
     path('edit/<int:id>', notesViews.edit, name='edit'),
     path('accounts/', include('accounts.urls')),
+    path('home', notesViews.index, name='index'),
 ]
 
 #the href in the template points to the 3rd url here

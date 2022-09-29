@@ -5,13 +5,13 @@
             <div class="row g-0">
             <div>
                 <div class="card-body">
-                <h5 class="card-title">Create an account</h5>
+                <h5 class="card-title">Login</h5>
                 <p class="card-text">
                     <form method="POST">
                     {% csrf_token %}
                     {{ form.as_p }}
                     <button type="submit" class="btn btn-primary">
-                        Create account
+                        Login
                     </button>
                     </form>
                 </p>

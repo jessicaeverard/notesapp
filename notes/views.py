@@ -12,11 +12,11 @@ def index(request):
         #newNote.text = request.text, not too sure why this is not needed maybe cuz its a post request?
         newNote.user = request.user #the user that created the note
         newNote.save() #creating the note object
-        notes = Notes.objects.all().order_by('-date')
+        notes = Notes.objects.filter(user=request.user).order_by('-date')
         return render(request, "home.html", {'form':NoteForm, 'notes':notes})
 
     else:
-        notes = Notes.objects.all().order_by('-date')
+        notes = Notes.objects.filter(user=request.user).order_by('-date')
     return render(request, "home.html", {'form':NoteForm, 'notes':notes})
 
 def delete(request, id):

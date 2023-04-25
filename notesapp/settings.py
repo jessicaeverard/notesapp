@@ -26,8 +26,9 @@ SECRET_KEY = 'django-insecure--40u*+=q$zy^&gn3&jmy4ic^j*rk39hd1af-7oo@oy3j!gte66
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['notesapp-production-8401.up.railway.app']
 
+CSRF_TRUSTED_ORIGINS = ['https://notesapp-production-8401.up.railway.app']
 
 # Application definition
 

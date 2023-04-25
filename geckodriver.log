@@ -307,3 +307,22 @@ DevTools listening on ws://127.0.0.1:56213/devtools/browser/b950e062-8672-4420-a
 console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:8000."
 console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:8000."
 1665764518787	Marionette	INFO	Stopped listening on port 56222
+1671803093314	geckodriver	INFO	Listening on 127.0.0.1:63670
+1671803096378	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "63671" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\jesse\\AppData\\Local\\Temp\\rust_mozprofileUwSJpW"
+1671803096654	Marionette	INFO	Marionette enabled
+1671803096660	Marionette	INFO	Listening on port 63680
+Read port: 63680
+WebDriver BiDi listening on ws://127.0.0.1:63671
+1671803096761	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\jesse\\AppData\\Local\\Temp\\rust_mozprofileUwSJpW\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:63671/devtools/browser/e5a86d6f-04a0-492d-afb8-29cd7474fc50
+1671803107185	Marionette	INFO	Stopped listening on port 63681671803107515	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "63715" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\jesse\\AppData\\Local\\Temp\\rust_mozprofilezNXTCd"
+1671803107771	Marionette	INFO	Marionette enabled
+1671803107777	Marionette	INFO	Listening on port 63724
+WebDriver BiDi listening on ws://127.0.0.1:63715
+Read port: 63724
+1671803107968	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\jesse\\AppData\\Local\\Temp\\rust_mozprofilezNXTCd\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:63715/devtools/browser/f596ac75-1363-471b-ae98-389154e0eb80
+1671803110046	Marionette	INFO	Stopped listening on port 63724
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
